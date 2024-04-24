@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`flex flex-col min-h-screen ${inter.className}`}>
-        <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
+        <Toaster position="bottom-right" toastOptions={{ duration: 3000 }} />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

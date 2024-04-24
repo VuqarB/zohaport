@@ -35,7 +35,7 @@ const Navbar = () => {
           }`}
         >
           {navLinks.map((item) => (
-            <li key={item.label}>
+            <li key={item.label} onClick={() => setOpen(false)}>
               {item.href ? (
                 <Link
                   href={item.href}
