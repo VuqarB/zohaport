@@ -31,7 +31,7 @@ const ServiceSectionBody = ({ services }) => {
         <ul>
           {services.map((service) => (
             <li
-              key={service.text}
+              key={service.title}
               className="flex items-center gap-x-2.5 xs:gap-x-5 py-[10px] xs:py-[24px] md:py-[20px] cLg:py-[30px] text-[15px] xs:text-[20px] md:text-[24px] leading-[29px] xs:leading-[28px] md:leading-[95%] font-medium xs:font-semibold service-nav-text-color service-nav-border cursor-pointer"
               onClick={() => activeServiceDetails(service._id)}
             >

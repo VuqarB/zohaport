@@ -17,7 +17,7 @@ const Navbar = () => {
   const handleMenu = () => setOpen(!open);
 
   return (
-    <header className="fixed z-10 top-0 left-0 right-0 py-[16px] xs:py-[20px] cLg:py-[24px] xl:py-[35px] border border-white bg-white w-full">
+    <header className="fixed z-10 top-0 left-0 right-0 py-[16px] xs:py-[20px] cLg:py-[24px] xl:py-[35px] bg-white w-full">
       <nav className="max-container flex-between w-full bg-white">
         <Link href="/">
           <Image
@@ -30,7 +30,7 @@ const Navbar = () => {
         </Link>
 
         <ul
-          className={`fixed cLg:static top-[12%] md:top-[16%] z-50 flex flex-col cLg:flex-row cLg:items-center gap-[25px] cLg:gap-[50px] transition-all duration-300 ease-linear w-full cLg:w-auto bg-white cLg:bg-transparent pt-[20px] px-[15px] pb-[40px] cLg:p-0 ${
+          className={`fixed cLg:static top-[10%] xs:top-[12%] z-50 flex flex-col cLg:flex-row cLg:items-center gap-[25px] cLg:gap-[50px] transition-all duration-300 ease-linear w-full cLg:w-auto bg-white cLg:bg-transparent pt-[20px] px-[15px] pb-[40px] cLg:p-0 ${
             open ? "left-0" : "left-[-100%]"
           }`}
         >
