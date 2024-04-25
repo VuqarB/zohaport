@@ -2,21 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 40,
-  },
-  animate: (delay) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay,
-      duration: 0.5,
-    },
-  }),
-};
+import { fadeInAnimationVariants } from "@/lib/motion";
 
 const SectionTitle = ({
   hero,
@@ -47,13 +33,12 @@ const SectionTitle = ({
         } gap-2.5 xs:gap-4 mb-2 xs:mb-2.5 md:mb-[14px] cLg:mb-4`}
       >
         <motion.div
-          variants={fadeInAnimationVariants}
+          variants={fadeInAnimationVariants("y", 40, 0, 0.1)}
           initial="initial"
           whileInView="animate"
           viewport={{
             once: true,
           }}
-          custom={0.1}
           className={`${
             start && responsive
               ? "block md:hidden"
@@ -61,19 +46,18 @@ const SectionTitle = ({
           } w-[50px] h-[2px] bg-[#e54530]`}
         />
         <motion.div
-          variants={fadeInAnimationVariants}
+          variants={fadeInAnimationVariants("y", 40, 0, 0.2)}
           initial="initial"
           whileInView="animate"
           viewport={{
             once: true,
           }}
-          custom={0.2}
           className="overflow relative z-1 text-[14px] leading-[20px] md:text-[16px] xs:leading-[30px] text-[#e54530] tracking-[2px] font-medium uppercase"
         >
           {subtitle}
         </motion.div>
         <motion.div
-          variants={fadeInAnimationVariants}
+          variants={fadeInAnimationVariants("y", 40, 0, 0.1)}
           initial="initial"
           whileInView="animate"
           viewport={{
@@ -105,7 +89,7 @@ const SectionTitle = ({
 
       {title && (
         <motion.div
-          variants={fadeInAnimationVariants}
+          variants={fadeInAnimationVariants("y", 40, 0, 0.175)}
           initial="initial"
           whileInView="animate"
           viewport={{
@@ -131,7 +115,7 @@ const SectionTitle = ({
 
       {desc && (
         <motion.div
-          variants={fadeInAnimationVariants}
+          variants={fadeInAnimationVariants("y", 40, 0, 0.2)}
           initial="initial"
           whileInView="animate"
           viewport={{

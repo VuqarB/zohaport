@@ -9,51 +9,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import { footerNav, footerUtility } from "@/constants";
 import { motion } from "framer-motion";
-
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  animate: (delay) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay,
-      duration: 0.5,
-    },
-  }),
-};
-
-const footerBottomLeftFadeIn = {
-  initial: {
-    opacity: 0,
-    x: -100,
-  },
-  animate: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: 0.3,
-      duration: 0.5,
-    },
-  },
-};
-
-const footerBottomRightFadeIn = {
-  initial: {
-    opacity: 0,
-    x: 100,
-  },
-  animate: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: 0.3,
-      duration: 0.5,
-    },
-  },
-};
+import { fadeInAnimationVariants } from "@/lib/motion";
 
 const Footer = () => {
   return (
@@ -63,13 +19,12 @@ const Footer = () => {
         <div className="mb-[20px] md:mb-[40px] cLg:mb-[120px]">
           <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-[auto_1fr] cLg:grid-cols-[2.2fr_auto_auto_1fr] gap-[24px] xs:gap-[30px] md:gap-[40px] cLg:gap-[70px]">
             <motion.div
-              variants={fadeInAnimationVariants}
+              variants={fadeInAnimationVariants("y", 100, 0, 0.1)}
               initial="initial"
               whileInView="animate"
               viewport={{
                 once: true,
               }}
-              custom={0.1}
               className="col-span-1 xs:col-span-2 md:col-span-1"
             >
               <Link
@@ -122,13 +77,12 @@ const Footer = () => {
             </motion.div>
 
             <motion.div
-              variants={fadeInAnimationVariants}
+              variants={fadeInAnimationVariants("y", 100, 0, 0.3)}
               initial="initial"
               whileInView="animate"
               viewport={{
                 once: true,
               }}
-              custom={0.3}
             >
               <div className="mb-[16px] xs:mb-[20px] md:mb-[26px] cLg:mb-[50px]">
                 <h4 className="my-0 font-general-sans text-white text-[15px] xs:text-[16px] md:text-[20px] cLg:text-[22px] leading-[120%] font-semibold tracking-[3.74px] uppercase">
@@ -151,13 +105,12 @@ const Footer = () => {
             </motion.div>
 
             <motion.div
-              variants={fadeInAnimationVariants}
+              variants={fadeInAnimationVariants("y", 100, 0, 0.5)}
               initial="initial"
               whileInView="animate"
               viewport={{
                 once: true,
               }}
-              custom={0.5}
             >
               <div className="mb-[16px] xs:mb-[20px] md:mb-[26px] cLg:mb-[50px]">
                 <h4 className="my-0 font-general-sans text-white text-[15px] xs:text-[16px] md:text-[20px] cLg:text-[22px] leading-[120%] font-semibold tracking-[3.74px] uppercase">
@@ -180,13 +133,12 @@ const Footer = () => {
             </motion.div>
 
             <motion.div
-              variants={fadeInAnimationVariants}
+              variants={fadeInAnimationVariants("y", 100, 0, 0.7)}
               initial="initial"
               whileInView="animate"
               viewport={{
                 once: true,
               }}
-              custom={0.7}
             >
               <div className="mb-[16px] xs:mb-[20px] md:mb-[26px] cLg:mb-[50px]">
                 <h4 className="my-0 font-general-sans text-white text-[15px] xs:text-[16px] md:text-[20px] cLg:text-[22px] leading-[120%] font-semibold tracking-[3.74px] uppercase">
@@ -217,7 +169,7 @@ const Footer = () => {
 
         <div className="flex-center flex-col md:flex-row md:flex-between py-5 footer-b-border">
           <motion.div
-            variants={footerBottomLeftFadeIn}
+            variants={fadeInAnimationVariants("x", -100, 0, 0.3)}
             initial="initial"
             whileInView="animate"
             viewport={{
@@ -236,7 +188,7 @@ const Footer = () => {
           </motion.div>
 
           <motion.div
-            variants={footerBottomRightFadeIn}
+            variants={fadeInAnimationVariants("x", 100, 0, 0.3)}
             initial="initial"
             whileInView="animate"
             viewport={{

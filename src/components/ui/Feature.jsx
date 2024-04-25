@@ -2,31 +2,17 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 40,
-  },
-  animate: (index) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.25 * index,
-    },
-  }),
-};
+import { fadeInAnimationVariants } from "@/lib/motion";
 
 const Feature = ({ data, index }) => {
   return (
     <motion.div
-      variants={fadeInAnimationVariants}
+      variants={fadeInAnimationVariants("y", 40, 0, 0.25 * index)}
       initial="initial"
       whileInView="animate"
       viewport={{
         once: true,
       }}
-      custom={index}
       key={data.title}
       className="relative w-full cLg:w-[355px] mr-0 last:mr-0 cLg:mr-[70px] px-4 xs:px-0"
     >

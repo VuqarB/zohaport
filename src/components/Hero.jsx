@@ -5,36 +5,7 @@ import Button from "./ui/Button";
 import Section from "./ui/Section";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
-const heroFadeIn = {
-  initial: {
-    opacity: 0,
-    x: 100,
-  },
-  animate: (delay) => ({
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay,
-      duration: 0.5,
-    },
-  }),
-};
-
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 40,
-  },
-  animate: (delay) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay,
-      duration: 0.5,
-    },
-  }),
-};
+import { fadeInAnimationVariants } from "@/lib/motion";
 
 const Hero = () => {
   return (
@@ -55,13 +26,12 @@ const Hero = () => {
               margin="mb-0"
             />
             <motion.div
-              variants={fadeInAnimationVariants}
+              variants={fadeInAnimationVariants("y", 40, 0, 0.3)}
               initial="initial"
               whileInView="animate"
               viewport={{
                 once: true,
               }}
-              custom={0.3}
               className="overflow-hidden md:max-w-[584px] w-full mx-auto md:mx-0 mb-[24px] xs:mb-[30px] cLg:mb-[40px]"
             >
               <p className="text-[#3d3d3d] text-[13px] leading-[23px] xs:text-[16px] xs:leading-[26px] md:text-[18px] md:leading-[28px] text-center md:text-left">
@@ -73,13 +43,12 @@ const Hero = () => {
           </div>
 
           <motion.div
-            variants={fadeInAnimationVariants}
+            variants={fadeInAnimationVariants("y", 40, 0, 0.5)}
             initial="initial"
             whileInView="animate"
             viewport={{
               once: true,
             }}
-            custom={0.5}
             className="flex-center md:flex-start flex-col md:flex-row gap-2.5 w-3/5 md:w-auto mx-auto md:mx-0"
           >
             <Button
@@ -99,13 +68,12 @@ const Hero = () => {
 
         <div className="flex-1 w-full md:w-auto">
           <motion.div
-            variants={heroFadeIn}
+            variants={fadeInAnimationVariants("x", 100, 0, 0.3)}
             initial="initial"
             whileInView="animate"
             viewport={{
               once: true,
             }}
-            custom={0.3}
             className="relative"
           >
             <div className="relative left-0 flex-center mb-[30px] cLg:mb-0 overflow-hidden w-full md:w-auto">

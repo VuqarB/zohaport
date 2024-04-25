@@ -3,21 +3,7 @@
 import Image from "next/image";
 import Button from "./Button";
 import { motion } from "framer-motion";
-
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 60,
-  },
-  animate: (delay) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay,
-      duration: 0.5,
-    },
-  }),
-};
+import { fadeInAnimationVariants } from "@/lib/motion";
 
 const BlogCard = ({ data }) => {
   const formattedDate = () => {
@@ -31,13 +17,12 @@ const BlogCard = ({ data }) => {
 
   return (
     <motion.div
-      variants={fadeInAnimationVariants}
+      variants={fadeInAnimationVariants("y", 60, 0, 0.5)}
       initial="initial"
       whileInView="animate"
       viewport={{
         once: true,
       }}
-      custom={0.5}
       className="pt-[20px] px-[25px] pb-[35px] border border-[#ededed] blog-card-hover"
     >
       <div className="relative overflow-hidden">

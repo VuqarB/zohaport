@@ -2,31 +2,17 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 40,
-  },
-  animate: (index) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.25 * index,
-    },
-  }),
-};
+import { fadeInAnimationVariants } from "@/lib/motion";
 
 const LogisticCard = ({ data, index }) => {
   return (
     <motion.div
-      variants={fadeInAnimationVariants}
+      variants={fadeInAnimationVariants("y", 40, 0, 0.25 * index)}
       initial="initial"
       whileInView="animate"
       viewport={{
         once: true,
       }}
-      custom={index}
     >
       <div className="relative overflow-hidden p-[35px] border border-[#ededed] logistic-hover">
         <div className="relative flex mb-[46px]">

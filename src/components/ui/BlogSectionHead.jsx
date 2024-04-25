@@ -3,36 +3,7 @@
 import Button from "./Button";
 import SectionTitle from "../SectionTitle";
 import { motion } from "framer-motion";
-
-const descFadeIn = {
-  initial: {
-    opacity: 0,
-    y: 40,
-  },
-  animate: (delay) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay,
-      duration: 0.5,
-    },
-  }),
-};
-
-const buttonFadeIn = {
-    initial: {
-      opacity: 0,
-      y: 60,
-    },
-    animate: (delay) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay,
-        duration: 0.5,
-      },
-    }),
-  };
+import { fadeInAnimationVariants } from "@/lib/motion";
 
 const BlogSectionHead = () => {
   return (
@@ -46,13 +17,12 @@ const BlogSectionHead = () => {
           responsive
         />
         <motion.div
-          variants={descFadeIn}
+          variants={fadeInAnimationVariants("y", 40, 0, 0.3)}
           initial="initial"
           whileInView="animate"
           viewport={{
             once: true,
           }}
-          custom={0.3}
           className="overflow-hidden max-w-[457px] w-full"
         >
           <p className="text-[#3d3d3d] text-[13px] leading-[23px] xs:text-[16px] xs:leading-[26px] md:text-[18px] md:leading-[28px] text-center md:text-left">
@@ -63,13 +33,12 @@ const BlogSectionHead = () => {
       </div>
 
       <motion.div
-        variants={buttonFadeIn}
+        variants={fadeInAnimationVariants("y", 60, 0, 0.3)}
         initial="initial"
         whileInView="animate"
         viewport={{
           once: true,
         }}
-        custom={0.3}
       >
         <Button
           href="/blog "

@@ -5,34 +5,19 @@ import Button from "./ui/Button";
 import Section from "./ui/Section";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  animate: (delay) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay,
-      duration: 0.5,
-    },
-  }),
-};
+import { fadeInAnimationVariants } from "@/lib/motion";
 
 const LetsTalk = () => {
   return (
     <Section className="max-container">
       <div className="flex-center flex-col w-full">
         <motion.div
-          variants={fadeInAnimationVariants}
+          variants={fadeInAnimationVariants("y", 100, 0, 0.3)}
           initial="initial"
           whileInView="animate"
           viewport={{
             once: true,
           }}
-          custom={0.3}
         >
           <Image
             src="/cta-img.svg"

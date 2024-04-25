@@ -9,51 +9,7 @@ import Button from "./ui/Button";
 import { useForm } from "react-hook-form";
 import { sendRequest } from "@/lib/api";
 import { motion } from "framer-motion";
-
-const titleFadeIn = {
-  initial: {
-    opacity: 0,
-    y: 40,
-  },
-  animate: (delay) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay,
-      duration: 0.5,
-    },
-  }),
-};
-
-const quoteFadeIn = {
-  initial: {
-    opacity: 0,
-    x: -100,
-  },
-  animate: (delay) => ({
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay,
-      duration: 0.5,
-    },
-  }),
-};
-
-const formFadeIn = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  animate: (delay) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay,
-      duration: 0.5,
-    },
-  }),
-};
+import { fadeInAnimationVariants } from "@/lib/motion";
 
 const RequestQuote = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -68,13 +24,12 @@ const RequestQuote = () => {
       <div className="flex flex-col cLg:flex-row gap-[70px]">
         <div className="flex-1 relative">
           <motion.div
-            variants={quoteFadeIn}
+            variants={fadeInAnimationVariants("x", -100, 0, 0.3)}
             initial="initial"
             whileInView="animate"
             viewport={{
               once: true,
             }}
-            custom={0.3}
           >
             <div className="relative left-0 cLg:left-[30px] mb-[30px] cLg:mb-0 overflow-hidden">
               <Image
@@ -91,13 +46,12 @@ const RequestQuote = () => {
         <div className="flex-[1.2]">
           <SectionTitle subtitle="request quote" start margin="mb-0" />
           <motion.div
-            variants={titleFadeIn}
+            variants={fadeInAnimationVariants("y", 40, 0, 0.175)}
             initial="initial"
             whileInView="animate"
             viewport={{
               once: true,
             }}
-            custom={0.175}
             className="overflow-hidden mb-[45px]"
           >
             <h2 className="text-[20px] xs:text-[34px] md:text-[40px] cLg:text-[48px] leading-[30px] xs:leading-[44px] md:leading-[50px] cLg:leading-[58px] font-semibold">
@@ -106,13 +60,12 @@ const RequestQuote = () => {
           </motion.div>
 
           <motion.div
-            variants={formFadeIn}
+            variants={fadeInAnimationVariants("y", 100, 0, 0.3)}
             initial="initial"
             whileInView="animate"
             viewport={{
               once: true,
             }}
-            custom={0.3}
             className="mb-[15px]"
           >
             <form
