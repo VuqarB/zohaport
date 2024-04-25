@@ -1,4 +1,22 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+const fadeInAnimationVariants = {
+  initial: {
+    opacity: 0,
+    y: 40,
+  },
+  animate: (delay) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay,
+      duration: 0.5,
+    },
+  }),
+};
 
 const SectionTitle = ({
   hero,
@@ -28,17 +46,42 @@ const SectionTitle = ({
           start ? "flex-start" : "flex-center"
         } gap-2.5 xs:gap-4 mb-2 xs:mb-2.5 md:mb-[14px] cLg:mb-4`}
       >
-        <div
+        <motion.div
+          variants={fadeInAnimationVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
+          custom={0.1}
           className={`${
             start && responsive
               ? "block md:hidden"
               : start && !responsive && "hidden"
           } w-[50px] h-[2px] bg-[#e54530]`}
         />
-        <div className="overflow relative z-1 text-[14px] leading-[20px] md:text-[16px] xs:leading-[30px] text-[#e54530] tracking-[2px] font-medium uppercase">
+        <motion.div
+          variants={fadeInAnimationVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
+          custom={0.2}
+          className="overflow relative z-1 text-[14px] leading-[20px] md:text-[16px] xs:leading-[30px] text-[#e54530] tracking-[2px] font-medium uppercase"
+        >
           {subtitle}
-        </div>
-        <div className="w-[50px] h-[2px] bg-[#e54530]" />
+        </motion.div>
+        <motion.div
+          variants={fadeInAnimationVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
+          custom={0.1}
+          className="w-[50px] h-[2px] bg-[#e54530]"
+        />
         {!noStar && (
           <Image
             src="/star.svg"
@@ -61,8 +104,17 @@ const SectionTitle = ({
       </div>
 
       {title && (
-        <h2
-          className={`
+        <motion.div
+          variants={fadeInAnimationVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
+          custom={0.175}
+        >
+          <h2
+            className={`
                 ${white ? "text-[white]" : "text-[#050505]"}
                 ${
                   hero
@@ -71,13 +123,23 @@ const SectionTitle = ({
                 }
                 font-semibold capitalize font-general-sans
             `}
-        >
-          {title}
-        </h2>
+          >
+            {title}
+          </h2>
+        </motion.div>
       )}
 
       {desc && (
-        <div className="overflow-hidden md:max-w-[598px] w-full">
+        <motion.div
+          variants={fadeInAnimationVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
+          custom={0.2}
+          className="overflow-hidden md:max-w-[598px] w-full"
+        >
           <p
             className={`${white ? "text-[white]" : "text-[#3d3d3d]"} ${
               start ? "text-left" : "text-center"
@@ -85,7 +147,7 @@ const SectionTitle = ({
           >
             {desc}
           </p>
-        </div>
+        </motion.div>
       )}
     </div>
   );

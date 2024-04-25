@@ -1,21 +1,47 @@
+"use client";
+
 import SectionTitle from "./SectionTitle";
 import Button from "./ui/Button";
 import Section from "./ui/Section";
 import Image from "next/image";
-import { getTests } from "@/lib/data";
+import { motion } from "framer-motion";
 
-const LetsTalk = async () => {
+const fadeInAnimationVariants = {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: (delay) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay,
+      duration: 0.5,
+    },
+  }),
+};
 
+const LetsTalk = () => {
   return (
     <Section className="max-container">
       <div className="flex-center flex-col w-full">
-        <Image
-          src="/cta-img.svg"
-          className="mb-9"
-          width={334}
-          height={165}
-          alt="cta"
-        />
+        <motion.div
+          variants={fadeInAnimationVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
+          custom={0.3}
+        >
+          <Image
+            src="/cta-img.svg"
+            className="mb-9"
+            width={334}
+            height={165}
+            alt="cta"
+          />
+        </motion.div>
 
         <div>
           <SectionTitle

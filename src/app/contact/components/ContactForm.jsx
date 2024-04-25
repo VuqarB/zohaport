@@ -9,7 +9,7 @@ const ContactForm = () => {
 
   function onSubmit(data) {
     sendEmail(data);
-    reset()
+    reset();
   }
 
   return (

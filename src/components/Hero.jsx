@@ -1,7 +1,40 @@
+"use client";
+
 import SectionTitle from "./SectionTitle";
 import Button from "./ui/Button";
 import Section from "./ui/Section";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+const heroFadeIn = {
+  initial: {
+    opacity: 0,
+    x: 100,
+  },
+  animate: (delay) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay,
+      duration: 0.5,
+    },
+  }),
+};
+
+const fadeInAnimationVariants = {
+  initial: {
+    opacity: 0,
+    y: 40,
+  },
+  animate: (delay) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay,
+      duration: 0.5,
+    },
+  }),
+};
 
 const Hero = () => {
   return (
@@ -21,23 +54,60 @@ const Hero = () => {
               title="Fast Certified And Flexible Solution."
               margin="mb-0"
             />
-            <div className="overflow-hidden md:max-w-[584px] w-full mx-auto md:mx-0 mb-[24px] xs:mb-[30px] cLg:mb-[40px]"> 
+            <motion.div
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={0.3}
+              className="overflow-hidden md:max-w-[584px] w-full mx-auto md:mx-0 mb-[24px] xs:mb-[30px] cLg:mb-[40px]"
+            >
               <p className="text-[#3d3d3d] text-[13px] leading-[23px] xs:text-[16px] xs:leading-[26px] md:text-[18px] md:leading-[28px] text-center md:text-left">
                 Blanditiis praesentium voluptatum dolor lorem deleniti atque
                 corrupti quos amy dolores et quas molestias.voluptatem
                 accusantium doloremque laudantium totam rem aperiam.
               </p>
-            </div>
+            </motion.div>
           </div>
 
-          <div className="flex-center md:flex-start flex-col md:flex-row gap-2.5 w-3/5 md:w-auto mx-auto md:mx-0">
-            <Button text="contact us" href="/contact" className="w-full md:w-auto flex-center" />
-            <Button text="learn more" icon color transparent className="w-full md:w-auto flex-center border border-[#ededed]" />
-          </div>
+          <motion.div
+            variants={fadeInAnimationVariants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
+            custom={0.5}
+            className="flex-center md:flex-start flex-col md:flex-row gap-2.5 w-3/5 md:w-auto mx-auto md:mx-0"
+          >
+            <Button
+              text="contact us"
+              href="/contact"
+              className="w-full md:w-auto flex-center"
+            />
+            <Button
+              text="learn more"
+              icon
+              color
+              transparent
+              className="w-full md:w-auto flex-center border border-[#ededed]"
+            />
+          </motion.div>
         </div>
 
         <div className="flex-1 w-full md:w-auto">
-          <div className="relative">
+          <motion.div
+            variants={heroFadeIn}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
+            custom={0.3}
+            className="relative"
+          >
             <div className="relative left-0 flex-center mb-[30px] cLg:mb-0 overflow-hidden w-full md:w-auto">
               <Image
                 src="/hero-baner-img-1.png"
@@ -57,7 +127,7 @@ const Hero = () => {
               />
             </div>
             <div className="hidden md:block absolute top-[-32px] right-0 z-[-1] w-[53%] h-[110%] hero-border" />
-          </div>
+          </motion.div>
         </div>
       </div>
     </Section>

@@ -1,11 +1,10 @@
-import React from "react";
 import Section from "./ui/Section";
 import SectionTitle from "./SectionTitle";
 import LogisticCard from "./ui/LogisticCard";
 import { getLogistic } from "@/lib/data";
 
 const Logistic = async () => {
-  const logistic = JSON.parse(JSON.stringify(await getLogistic()))
+  const logistic = JSON.parse(JSON.stringify(await getLogistic()));
 
   return (
     <Section className="max-container">
@@ -18,8 +17,8 @@ const Logistic = async () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 cLg:grid-cols-3 gap-6">
-        {logistic.map((item) => (
-          <LogisticCard key={item.title} data={item} />
+        {logistic.map((item, index) => (
+          <LogisticCard key={item.title} index={index} data={item} />
         ))}
       </div>
     </Section>

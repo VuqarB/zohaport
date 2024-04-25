@@ -8,10 +8,26 @@ export const sendEmail = (data) => {
     body: JSON.stringify(data),
   })
     .then((res) => res.json())
-    .then(() => {
-      toast.success(`Hey, ${data.name} your message was sent successfully`);
+    .then((res) => {
+      toast.success(res.message);
     })
     .catch((err) => {
-      alert(err);
+      toast.error(err);
+    });
+};
+
+export const sendRequest = (data) => {
+  const apiEndpoint = "/api/quote";
+
+  fetch(apiEndpoint, {
+    method: "POST",
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      toast.success(res.message);
+    })
+    .catch((err) => {
+      toast.error(err);
     });
 };

@@ -1,8 +1,35 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+const fadeInAnimationVariants = {
+  initial: {
+    opacity: 0,
+    y: 40,
+  },
+  animate: (delay) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay,
+      duration: 0.5,
+    },
+  }),
+};
 
 const Testimonal = ({ data }) => {
   return (
-    <div className="pt-[25px] pb-[36px] border border-[#ededed] sm:max-w-[312px] w-full">
+    <motion.div
+      variants={fadeInAnimationVariants}
+      initial="initial"
+      whileInView="animate"
+      viewport={{
+        once: true,
+      }}
+      custom={0.5}
+      className="pt-[25px] pb-[36px] border border-[#ededed] sm:max-w-[312px] w-full"
+    >
       <div className="flex flex-col">
         <div className="flex items-center gap-4 px-[15px]">
           <Image
@@ -35,7 +62,7 @@ const Testimonal = ({ data }) => {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
