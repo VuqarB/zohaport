@@ -1,10 +1,28 @@
+"use client";
+
 import Button from "@/components/ui/Button";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { fadeInAnimationVariants } from "@/lib/motion";
 
 const ServiceCard = ({ data }) => {
   return (
-    <div className="flex flex-col sm:flex-row sm:items-center gap-[16px] xs:gap-[24px] md:gap-[36px] p-[13px] xs:py-[20px] xs:px-[20px] md:pr-[25px] md:pl-[25px] border border-[#ededed]">
-      <Image src={data.imgUrl} className="w-full sm:w-[210px]" width={210} height={221} alt="service-img" />
+    <motion.div
+      variants={fadeInAnimationVariants("y", 100, 0, 0.5)}
+      initial="initial"
+      whileInView="animate"
+      viewport={{
+        once: true,
+      }}
+      className="flex flex-col sm:flex-row sm:items-center gap-[16px] xs:gap-[24px] md:gap-[36px] p-[13px] xs:py-[20px] xs:px-[20px] md:pr-[25px] md:pl-[25px] border border-[#ededed]"
+    >
+      <Image
+        src={data.imgUrl}
+        className="w-full sm:w-[210px]"
+        width={210}
+        height={221}
+        alt="service-img"
+      />
 
       <div>
         <div className="text-[#3d3d3d] text-[13px] xs:text-[14px] leading-[120%] tracking-[.98px] mb-[6px] xs:mb-[13px] md:mb-[15px] uppercase">
@@ -27,7 +45,7 @@ const ServiceCard = ({ data }) => {
           className="hover:text-[#e54530]"
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

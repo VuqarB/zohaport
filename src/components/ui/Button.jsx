@@ -23,7 +23,7 @@ const Button = ({
     transparent ? "bg-transparent" : "bg-[#e54530]"
   } outline-none ${className} flex-inline items-center gap-[13px] flex-grow-0 flex-shrink-0 transition-all duration-300 ease-linear button-hover`;
 
-  const renderIcon = () => <ArrowRightAltIcon className="button-icon" />;
+  const renderIcon = () => <ArrowRightAltIcon className="button-icon pl-[5px]" />;
 
   const renderBtn = () => (
     <button className={classes} onClick={onClick}>

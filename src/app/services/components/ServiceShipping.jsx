@@ -1,7 +1,7 @@
 import SectionTitle from "@/components/SectionTitle";
-import Button from "@/components/ui/Button";
 import Section from "@/components/ui/Section";
 import { getMainServiceShipping } from "@/lib/data";
+import ServiceShippingCard from "./ServiceShippingCard";
 
 const ServiceShipping = async ({ serviceId }) => {
   const serviceShipping = JSON.parse(
@@ -18,25 +18,12 @@ const ServiceShipping = async ({ serviceId }) => {
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[24px]">
-        {serviceShipping.map((shipping) => (
-          <div
+        {serviceShipping.map((shipping, index) => (
+          <ServiceShippingCard
             key={shipping.title}
-            className="p-[30px] border border-[#ededed]"
-          >
-            <div className="mb-[10px] xs:mb-[14px]">
-              <h3 className="my-0 font-general-sans text-[18px] xs:text-[24px] leading-[28px] xs:leading-[30px] font-semibold">
-                {shipping.title}
-              </h3>
-            </div>
-
-            <div className="mb-[10px] xs:mb-[20px] md:mb-[26px] cLg:mb-[32px] w-full cLg:w-[364px]">
-              <p className="text-[13px] xs:text-[15px] md:text-[16px] leading-[23px] xs:leading-[25px] md:leading-[28px] text-[#3d3d3d]">
-                {shipping.desc}
-              </p>
-            </div>
-
-            <Button href="/contact" text="contact experts" icon transparent color className="hover:text-[#e54530]" padding />
-          </div>
+            index={index}
+            data={shipping}
+          />
         ))}
       </div>
     </Section>

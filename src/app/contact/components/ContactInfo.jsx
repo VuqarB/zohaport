@@ -1,9 +1,21 @@
+"use client";
+
 import { contactInfo } from "@/constants";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { fadeInAnimationVariants } from "@/lib/motion";
 
 const ContactInfo = () => {
   return (
-    <div className="w-full max-w-[1166px] mx-auto mb-[30px] md:mb-[40px] cLg:mb-[80px] py-[45px] xs:py-[60px] cLg:py-[80px] px-[20px] cLg:px-[100px] contact-bg">
+    <motion.div
+      variants={fadeInAnimationVariants("y", 100, 0, 0.5)}
+      initial="initial"
+      whileInView="animate"
+      viewport={{
+        once: true,
+      }}
+      className="w-full max-w-[1166px] mx-auto mb-[30px] md:mb-[40px] cLg:mb-[80px] py-[45px] xs:py-[60px] cLg:py-[80px] px-[20px] cLg:px-[100px] contact-bg"
+    >
       <div className="flex-between flex-col md:flex-row w-full">
         {contactInfo.map((item) => (
           <div
@@ -25,7 +37,7 @@ const ContactInfo = () => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

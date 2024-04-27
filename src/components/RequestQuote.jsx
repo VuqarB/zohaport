@@ -86,22 +86,26 @@ const RequestQuote = () => {
                   <Input
                     type="text"
                     placeholder="Name"
-                    register={{ ...register("name", { required: true }) }}
+                    registerName="name"
+                    register={register}
                   />
                   <Input
                     type="email"
                     placeholder="Email Address"
-                    register={{ ...register("email", { required: true }) }}
+                    registerName="email"
+                    register={register}
                   />
                   <Input
                     type="tel"
                     placeholder="Phone"
-                    register={{ ...register("phone", { required: true }) }}
+                    registerName="phone"
+                    register={register}
                   />
                   <Input
                     type="text"
                     placeholder="Address"
-                    register={{ ...register("address", { required: true }) }}
+                    registerName="address"
+                    register={register}
                   />
                 </div>
               </div>
@@ -122,7 +126,8 @@ const RequestQuote = () => {
                       { value: "sea-fright-1", name: "Sea Fright" },
                       { value: "sea-fright-2", name: "Sea Fright" },
                     ]}
-                    {...register("seaFright", { required: true })}
+                    registerName="seaFright"
+                    register={register}
                   />
                   <Select
                     defaultOption="Incotems"
@@ -130,27 +135,32 @@ const RequestQuote = () => {
                       { value: "incomets-1", name: "Incomets" },
                       { value: "incomets-2", name: "Incomets" },
                     ]}
-                    {...register("incotems", { required: true })}
+                    registerName="incomets"
+                    register={register}
                   />
                   <Input
                     type="text"
                     placeholder="Delivery City"
-                    {...register("deliveryCity", { required: true })}
+                    registerName="deliveryCity"
+                    register={register}
                   />
                   <Input
                     type="text"
                     placeholder="City of Departure"
-                    {...register("cityOfDeparture", { required: true })}
+                    registerName="cityOfDeparture"
+                    register={register}
                   />
                   <Input
                     type="text"
                     placeholder="Width"
-                    {...register("width", { required: true })}
+                    registerName="width"
+                    register={register}
                   />
                   <Input
                     type="text"
-                    placeholder="Lenght"
-                    {...register("length", { required: true })}
+                    placeholder="Length"
+                    registerName="length"
+                    register={register}
                   />
                 </div>
               </div>

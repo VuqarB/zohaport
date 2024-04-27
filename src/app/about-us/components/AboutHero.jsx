@@ -1,8 +1,12 @@
+"use client";
+
 import SectionTitle from "@/components/SectionTitle";
 import Button from "@/components/ui/Button";
 import Section from "@/components/ui/Section";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { fadeInAnimationVariants } from "@/lib/motion";
 
 const AboutHero = () => {
   return (
@@ -19,32 +23,64 @@ const AboutHero = () => {
 
       <div className="relative flex flex-col cLg:flex-row w-full pt-[50px] xs:pt-[60px] px-[20px] pb-[60px] xs:pb-[80px] md:pt-[80px] md:pb-[100px] cLg:py-[120px] md:px-[66px] about-bg">
         <div className="flex flex-col cLg:max-w-[660px] w-full text-center xs:text-left">
-          <div className="overflow-hidden w-full mb-[10px] xs:mb-[18px] md:mb-[20px]">
+          <motion.div
+            variants={fadeInAnimationVariants("y", 60, 0, 0.3)}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
+            className="overflow-hidden w-full mb-[10px] xs:mb-[18px] md:mb-[20px]"
+          >
             <h2 className="my-0 text-white font-general-sans text-[19px] xs:text-[30px] md:text-[40px] cLg:text-[48px] leading-[27px] xs:leading-[40px] md:leading-[50px] cLg:leading-[58px] font-semibold capitalize">
               we are the loading <br /> experts in global transport & logistic
               services.
             </h2>
-          </div>
+          </motion.div>
 
-          <div className="overflow-hidden md:max-w-[584px] w-full mb-[16px] xs:mb-[20px] md:mb-[30px]">
+          <motion.div
+            variants={fadeInAnimationVariants("y", 60, 0, 0.5)}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
+            className="overflow-hidden md:max-w-[584px] w-full mb-[16px] xs:mb-[20px] md:mb-[30px]"
+          >
             <p className="mb-0 text-white text-[13px] xs:text-[16px] md:text-[18px] leading-[23px] xs:leading-[26px] md:leading-none">
               Blanditiis praesentium voluptatum dolor lorem deleniti atque
               corrupti quos amy dolores et quas molestias.voluptatem accusantium
               doloremque laudantium totam rem aperiam.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="mb-[40px] cLg:mb-0">
+          <motion.div
+            variants={fadeInAnimationVariants("y", 60, 0, 0.7)}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
+            className="mb-[40px] cLg:mb-0"
+          >
             <Button
               text="contact us"
               icon
               className="about-btn-border hover:bg-[#e54530] hover:border-[#e54530] mx-auto xs:mx-0"
               transparent
             />
-          </div>
+          </motion.div>
         </div>
 
-        <div className="static cLg:absolute top-[66px] right-[66px]">
+        <motion.div
+          variants={fadeInAnimationVariants("x", 100, 0, 0.5)}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
+          className="static cLg:absolute top-[66px] right-[66px]"
+        >
           <Link
             href="/"
             className="block relative overflow-hidden flex-center w-full h-full"
@@ -65,10 +101,18 @@ const AboutHero = () => {
               alt="video-play"
             />
           </Link>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="flex items-center flex-col xs:flex-row w-full cLg:max-w-[600px] gap-[16px] md:gap-[40px] cLg:gap-[48px] pt-[30px] cLg:pt-[40px]">
+      <motion.div
+        variants={fadeInAnimationVariants("x", -100, 0, 0.3)}
+        initial="initial"
+        whileInView="animate"
+        viewport={{
+          once: true,
+        }}
+        className="flex items-center flex-col xs:flex-row w-full cLg:max-w-[600px] gap-[16px] md:gap-[40px] cLg:gap-[48px] pt-[30px] cLg:pt-[40px]"
+      >
         <div className="relative flex-center w-full max-w-[168px]">
           <Image
             src="/counter-circle-img.svg"
@@ -98,7 +142,7 @@ const AboutHero = () => {
         </div>
 
         <div className="w-full max-w-[160px] h-[1px] bg-[#e54530]" />
-      </div>
+      </motion.div>
     </Section>
   );
 };

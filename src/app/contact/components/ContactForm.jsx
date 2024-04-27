@@ -3,6 +3,8 @@
 import Button from "@/components/ui/Button";
 import { sendEmail } from "@/lib/api";
 import { useForm } from "react-hook-form";
+import { motion } from "framer-motion";
+import { fadeInAnimationVariants } from "@/lib/motion";
 
 const ContactForm = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -13,7 +15,15 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="w-full max-w-[1096px] mx-auto p-[16px] xs:p-[24px] md:p-[30px] cLg:p-[45x] border border-[#ededed]">
+    <motion.div
+      variants={fadeInAnimationVariants("y", 100, 0, 0.7)}
+      initial="initial"
+      whileInView="animate"
+      viewport={{
+        once: true,
+      }}
+      className="w-full max-w-[1096px] mx-auto p-[16px] xs:p-[24px] md:p-[30px] cLg:p-[45x] border border-[#ededed]"
+    >
       <form
         className="grid grid-cols-1 md:grid-cols-2 gap-[24px]"
         onSubmit={handleSubmit(onSubmit)}
@@ -83,7 +93,7 @@ const ContactForm = () => {
           <Button text="Submit" className="w-full justify-center" />
         </div>
       </form>
-    </div>
+    </motion.div>
   );
 };
 

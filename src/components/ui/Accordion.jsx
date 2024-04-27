@@ -2,6 +2,8 @@
 
 import AddIcon from "@mui/icons-material/Add";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { fadeInAnimationVariants } from "@/lib/motion";
 
 const Accordion = ({ data }) => {
   const [openId, setOpenId] = useState(-1);
@@ -9,15 +11,21 @@ const Accordion = ({ data }) => {
   const handleAccordion = (id) => {
     if (openId === id) {
       setOpenId(-1);
-      return
+      return;
     }
     setOpenId(id);
   };
 
   return (
-    <div>
-      {data.map((item) => (
-        <div
+    <>
+      {data.map((item, index) => (
+        <motion.div
+          variants={fadeInAnimationVariants("y", 60, 0, 0.3 * index)}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
           className="flex flex-col pt-[10px] xs:pt-[16px] md:pt-[26px] px-[10px] xs:px-[16px] md:px-[32px] pb-0 mb-[16px] md:mb-[20px] border border-[#ededed]"
           key={item.title}
         >
@@ -40,9 +48,9 @@ const Accordion = ({ data }) => {
               {item.desc}
             </p>
           </div>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </>
   );
 };
 

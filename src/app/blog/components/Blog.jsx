@@ -7,7 +7,7 @@ const Blogs = async () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 cLg:grid-cols-3 gap-5 xs:gap-6">
       {blogs.map((item) => (
-        <BlogCard key={item.date} data={item} />
+        <BlogCard key={item.title} data={item} />
       ))}
     </div>
   );

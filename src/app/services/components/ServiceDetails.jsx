@@ -1,11 +1,14 @@
+"use client";
+
 import SectionTitle from "@/components/SectionTitle";
 import Button from "@/components/ui/Button";
 import Section from "@/components/ui/Section";
 import { blogDetailsList } from "@/constants";
 import Image from "next/image";
-import React from "react";
+import { motion } from "framer-motion";
+import { fadeInAnimationVariants } from "@/lib/motion";
 
-const ServiceDetails = ({data}) => {
+const ServiceDetails = ({ data }) => {
   return (
     <Section
       className="max-container"
@@ -18,17 +21,41 @@ const ServiceDetails = ({data}) => {
       />
 
       <div>
-        <div className="relative overflow-hidden mb-[16px] md:mb-[30px] cLg:mb-[40px]">
+        <motion.div
+          variants={fadeInAnimationVariants("y", 60, 0, 0.3)}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
+          className="relative overflow-hidden mb-[16px] md:mb-[30px] cLg:mb-[40px]"
+        >
           <Image src={data.imgUrl} width={872} height={409} alt="blog img" />
-        </div>
+        </motion.div>
 
-        <div className="overflow-hidden mb-[20px] xs:mb-[26px] cLg:mb-[30px]">
+        <motion.div
+          variants={fadeInAnimationVariants("y", 60, 0, 0.5)}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
+          className="overflow-hidden mb-[20px] xs:mb-[26px] cLg:mb-[30px]"
+        >
           <p className="text-[#3d3d3d] text-[13px] xs:text-[16px] cLg:text-[18px] leading-[23px] xs:leading-[26px] cLg:leading-[28px] mb-0">
             {data.desc}
           </p>
-        </div>
+        </motion.div>
 
-        <div className="mb-[12px] xs:mb-[20px]">
+        <motion.div
+          variants={fadeInAnimationVariants("y", 60, 0, 0.7)}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
+          className="mb-[12px] xs:mb-[20px]"
+        >
           <ul>
             {blogDetailsList.map((item) => (
               <li
@@ -42,9 +69,17 @@ const ServiceDetails = ({data}) => {
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
 
-        <div className="mb-0 xs:mb-[20px] cLg:mb-[26px]">
+        <motion.div
+          variants={fadeInAnimationVariants("y", 60, 0, 0.9)}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
+          className="mb-0 xs:mb-[20px] cLg:mb-[26px]"
+        >
           <p className="text-[#3d3d3d] text-[13px] xs:text-[16px] cLg:text-[18px] leading-[23px] xs:leading-[26px] cLg:leading-[28px] mb-0">
             Taudantium totam rem aperiam, eaque ipsa quae ab illo inventore
             veritatis et quasi amet architecto beatae vitae dicta sunt
@@ -56,11 +91,18 @@ const ServiceDetails = ({data}) => {
             aut odit aut fugit, sed quia consequuntur magni dolores eos qui
             ratione voluptatem sequi nesciunt.
           </p>
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div
+          variants={fadeInAnimationVariants("y", 60, 0, 1.1)}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
+        >
           <Button href="/contact" text="contact us" />
-        </div>
+        </motion.div>
       </div>
     </Section>
   );

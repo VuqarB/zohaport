@@ -1,10 +1,21 @@
+"use client";
+
 import Button from "@/components/ui/Button";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { fadeInAnimationVariants } from "@/lib/motion";
 
-const OfferCard = ({ data }) => {
-
+const OfferCard = ({ data, index }) => {
   return (
-    <div className="p-[13px] xs:p-[24px] border border-[#ededed] transition-all duration-300 ease-linear w-full hover:border-transparent offer-card-shadow overflow-hidden">
+    <motion.div
+      variants={fadeInAnimationVariants("y", 100, 0, 0.2*index)}
+      initial="initial"
+      whileInView="animate"
+      viewport={{
+        once: true,
+      }}
+      className="p-[13px] xs:p-[24px] border border-[#ededed] transition-all duration-300 ease-linear w-full hover:border-transparent offer-card-shadow overflow-hidden"
+    >
       <div className="mb-2.5 md:mb-3">
         <h3 className="py-0 font-general-sans text-[16px] xs:text-[20px] md:text-[22px] cLg:text-[24px] leading-[22px] xs:leading-[26px] md:leading-[28px] cLg:leading-[30px] font-semibold">
           {data.name}
@@ -44,7 +55,7 @@ const OfferCard = ({ data }) => {
           ${data.price}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
