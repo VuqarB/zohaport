@@ -18,7 +18,7 @@ const Button = ({
   } font-medium ${
     left ? "text-left" : "text-center"
   } capitalize whitespace-nowrap ${
-    padding || "py-[9px] md:py-[13px] px-[20px] md:px-[37px]"
+    padding || "py-[9px] px-[20px] md:py-[13px] md:px-[37px]"
   } ${
     transparent ? "bg-transparent" : "bg-[#e54530]"
   } outline-none ${className} flex-inline items-center gap-[13px] flex-grow-0 flex-shrink-0 transition-all duration-300 ease-linear button-hover`;

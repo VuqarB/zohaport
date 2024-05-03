@@ -7,7 +7,7 @@ const Testimonals = async () => {
   const testimonals = JSON.parse(JSON.stringify(await getTestimonals()));
 
   return (
-    <Section className="max-container">
+    <Section className="max-container" padding="pt-[60px]">
       <div className="flex-center flex-col">
         <SectionTitle
           subtitle="testimonals"

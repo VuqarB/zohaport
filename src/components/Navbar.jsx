@@ -17,7 +17,7 @@ const Navbar = () => {
   const handleMenu = () => setOpen(!open);
 
   return (
-    <header className="fixed z-10 top-0 left-0 right-0 py-[16px] xs:py-[20px] cLg:py-[24px] xl:py-[35px] bg-white w-full">
+    <header className="fixed z-50 top-0 left-0 right-0 py-[16px] xs:py-[20px] cLg:py-[24px] xl:py-[35px] bg-white w-full">
       <nav className="max-container flex-between w-full bg-white">
         <Link href="/">
           <Image
@@ -30,15 +30,16 @@ const Navbar = () => {
         </Link>
 
         <ul
-          className={`fixed cLg:static top-[10%] xs:top-[12%] z-50 flex flex-col cLg:flex-row cLg:items-center gap-[25px] cLg:gap-[50px] transition-all duration-300 ease-linear w-full cLg:w-auto bg-white cLg:bg-transparent pt-[20px] px-[15px] pb-[40px] cLg:p-0 ${
+          className={`fixed cLg:static top-[8%] xs:top-[10%] z-50 flex flex-col cLg:flex-row cLg:items-center gap-[25px] cLg:gap-[50px] transition-all duration-300 ease-linear w-full cLg:w-auto bg-white cLg:bg-transparent pt-[20px] px-[15px] pb-[40px] cLg:p-0 ${
             open ? "left-0" : "left-[-100%]"
           }`}
         >
           {navLinks.map((item) => (
-            <li key={item.label} onClick={() => setOpen(false)}>
+            <li key={item.label} className="text-[16px] leading-[16px] xs:text-[20px] xs:leading-[20px] md:text-[24px] cLg:text-[18px] cLg:leading-[28px]">
               {item.href ? (
                 <Link
                   href={item.href}
+                  onClick={() => setOpen(false)}
                   className={`capitalize hover:text-[#e54530] transition-all duration-300 ease-linear ${
                     pathname === item.href && "text-[#e54530]"
                   }`}
@@ -58,6 +59,7 @@ const Navbar = () => {
                         <Link
                           href={i.href}
                           key={i.href}
+                          onClick={() => setOpen(false)}
                           className="flex-start transition-all duration-300 ease-linear text-[16px] text-black leading-[19px] hover:text-[#e54530] dropdown-item"
                         >
                           <span className="mr-[7px]">{i.label}</span>

@@ -3,23 +3,28 @@
 import Section from "@/components/ui/Section";
 import { fadeInAnimationVariants } from "@/lib/motion";
 import { motion } from "framer-motion";
+import CountUp from "react-countup";
 
 const aboutCounter = [
   {
     title: "total warehouse",
-    count: "145+",
+    count: 145,
+    icon: "+",
   },
   {
     title: "customer satisfaction",
-    count: "98%",
+    count: 98,
+    icon: "%",
   },
   {
     title: "total vehicles",
-    count: "76+",
+    count: 76,
+    icon: "+",
   },
   {
     title: "total countries",
-    count: "150+",
+    count: 150,
+    icon: "+",
   },
 ];
 
@@ -39,7 +44,8 @@ const AboutCounter = () => {
           {aboutCounter.map((item, index) => (
             <div className="flex-center flex-col relative" key={item.title}>
               <div className="text-[30px] xs:text-[40px] leading-[38px] xs:leading-[50px] font-semibold">
-                {item.count}
+                <CountUp end={item.count} duration={4} />
+                {item.icon}
               </div>
               <div className="text-[12px] xs:text-[13px] md:text-[15px] cLg:text-[16px] xs:leading-[23px] leading-[25px] cLg:leading-none font-medium text-center uppercase">
                 {item.title}

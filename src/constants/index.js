@@ -34,15 +34,6 @@ export const navLinks = [
   },
 ];
 
-export const tickerMarquee = [
-  "/sponsor-img-1.svg",
-  "/sponsor-img-2.svg",
-  "/sponsor-img-3.svg",
-  "/sponsor-img-4.svg",
-  "/sponsor-img-5.svg",
-  "/sponsor-img-6.svg",
-];
-
 export const adverts = [
   "/advert-img-1.svg",
   "/advert-img-2.svg",
@@ -97,29 +88,6 @@ export const footerUtility = [
   {
     href: "/",
     label: "changelog",
-  },
-];
-
-export const mainServices = [
-  {
-    img: "/main-services-img-1.png",
-    title: "road freight",
-    subtitle: "Professional Land Freight Service For You.",
-  },
-  {
-    img: "/main-services-img-2.png",
-    title: "air freight",
-    subtitle: "Professional Land Freight Service For You.",
-  },
-  {
-    img: "/main-services-img-3.png",
-    title: "ocean freight",
-    subtitle: "Professional Land Freight Service For You.",
-  },
-  {
-    img: "/main-services-img-4.png",
-    title: "rail freight",
-    subtitle: "Professional Land Freight Service For You.",
   },
 ];
 

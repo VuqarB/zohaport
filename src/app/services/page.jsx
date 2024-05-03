@@ -2,6 +2,11 @@ import SectionTitle from "@/components/SectionTitle";
 import Section from "@/components/ui/Section";
 import Services from "./components/Services";
 
+export const metadata = {
+  title: "Services",
+  description: "Services description"
+}
+
 const page = () => {
   return (
     <Section

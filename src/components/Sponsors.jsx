@@ -13,7 +13,7 @@ const Sponsors = async () => {
     >
       <Marquee speed={150}>
         {sponsors.map((item) => (
-          <div key={item.id} className="mr-[40px] xs:mr-[60px] md:mr-[90px]">
+          <div key={item._id} className="mr-[40px] xs:mr-[60px] md:mr-[90px]">
             <Image
               src={item.imgUrl}
               className="w-[90px] xs:w-[100px] md:w-full"

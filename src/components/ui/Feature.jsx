@@ -16,14 +16,14 @@ const Feature = ({ data, index }) => {
       key={data.title}
       className="relative w-full cLg:w-[355px] mr-0 last:mr-0 cLg:mr-[70px] px-4 xs:px-0"
     >
-      <div className="flex-center flex-col p-5 xs:p-[30px] md:py-10 cLg:py-[70px] px-0 cLg:px-5 w-full md:w-[293px] mr-[45px] cLg:mr-0 translate-y-0 feature-hover transition-all duration-300 ease-linear">
+      <div className="flex-center flex-col p-5 xs:p-[30px] md:py-10 cLg:py-[70px] px-0 cLg:px-5 w-full md:w-[293px] mr-[45px] cLg:mr-0 translate-y-0 feature-hover transition-all duration-300 ease-linear relative z-[10] hover:bg-white">
         <div className="flex-center mb-[22px]">
           <Image
             src={data.icon}
             alt="feature-icon"
             width={47}
             height={47}
-            className="feature-img transition-all duration-300 ease-linear w-[32px] h-[32px] xs:w-[47] xs:h-[47]"
+            className="feature-img transition-all duration-300 ease-linear w-[32px] h-[32px] xs:w-[47px] xs:h-[47px]"
           />
         </div>
 

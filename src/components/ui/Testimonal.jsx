@@ -13,7 +13,7 @@ const Testimonal = ({ data }) => {
       viewport={{
         once: true,
       }}
-      className="pt-[25px] pb-[36px] border border-[#ededed] sm:max-w-[312px] w-full"
+      className="pt-[25px] pb-[36px] border border-[#ededed] hover:border-transparent sm:max-w-[312px] w-full transition-all duration-300 ease-linear testimonal-hover"
     >
       <div className="flex flex-col">
         <div className="flex items-center gap-4 px-[15px]">

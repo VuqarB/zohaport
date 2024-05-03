@@ -14,7 +14,7 @@ const LogisticCard = ({ data, index }) => {
         once: true,
       }}
     >
-      <div className="relative overflow-hidden p-[35px] border border-[#ededed] logistic-hover">
+      <div className="relative overflow-hidden p-[35px] border border-[#ededed] logistic-hover h-full">
         <div className="relative flex mb-[46px]">
           <Image src={data.icon} width={86} height={86} alt="logistic-img" />
           <Image

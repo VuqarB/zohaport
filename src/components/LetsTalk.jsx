@@ -10,7 +10,7 @@ import { fadeInAnimationVariants } from "@/lib/motion";
 const LetsTalk = () => {
   return (
     <Section className="max-container">
-      <div className="flex-center flex-col w-full">
+      <div className="flex-center flex-col w-full py-[60px] xs:pt-[80px] xs:pb-[60px] md:py-[100px] cLg:pt-[160px] cLg:pb-[120px]">
         <motion.div
           variants={fadeInAnimationVariants("y", 100, 0, 0.3)}
           initial="initial"
@@ -28,7 +28,14 @@ const LetsTalk = () => {
           />
         </motion.div>
 
-        <div>
+        <motion.div
+          variants={fadeInAnimationVariants("y", 100, 0, 0.5)}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
+        >
           <SectionTitle
             subtitle="let’s talk"
             title="do you have any questions"
@@ -41,7 +48,7 @@ const LetsTalk = () => {
               porttitor.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         <Button text="let’s talk" href="/contact" className="w-3/5 md:w-auto" />
       </div>

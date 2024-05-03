@@ -7,7 +7,7 @@ const Services = async () => {
   const services = JSON.parse(JSON.stringify(await getServices()));
 
   return (
-    <Section padding="py-[60px] xs:py-[70px] md:pb-[100px] md:pt-[90px] cLg:pt-[150px]">
+    <Section padding="py-[60px] xs:py-[70px] md:pb-[100px] md:pt-[90px] cLg:pt-[150px] cLg:pb-0">
       <div className="max-container">
         <SectionTitle
           subtitle="main services"

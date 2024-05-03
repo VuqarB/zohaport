@@ -43,10 +43,11 @@ const BlogSectionHead = () => {
         <Button
           href="/blog "
           text="more articles"
-          className="ml-2.5 hover:bg-[#e54530] hover:text-white "
+          className="ml-2.5 hover:bg-[#e54530] hover:text-white border border-[#ededed]"
           color
           transparent
           icon
+
         />
       </motion.div>
     </div>
