@@ -2,7 +2,7 @@
 
 import { useRef } from "react"
 
-const BurgerMenu = ({ open, handleMenu }) => {
+const BurgerMenu = ({ handleMenu }) => {
     const burgerTop = useRef()
     const burgerBottom = useRef()
 

@@ -7,13 +7,15 @@ const AboutVideo = ({ openVideo, handleVideo }) => {
         openVideo
           ? "opacity-100 pointer-events-auto"
           : "opacity-0 pointer-events-none"
-      } fixed inset-0 z-[100] about-video-bg transition-all duration-200 ease-linear`}
+      } fixed inset-0 z-[100] about-video-bg transition-all duration-200 ease-linear w-full h-full`}
       onClick={() => handleVideo(false)}
     >
-      <div className="flex flex-center h-full w-full xs:px-8">
+      <div className="flex flex-center h-full w-full px-8">
         <iframe
-          className="w-full cLg:w-[940px] h-[280px] xs:h-[528px]"
+          className="w-full cLg:w-[940px] h-[280px] xs:h-[528px] object-cover"
           src="https://www.youtube.com/embed/XiA6cGnSPoM?si=f6eNEgTOZ8LpPcQ2"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
         ></iframe>
 
         <div

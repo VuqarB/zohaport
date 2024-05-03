@@ -83,7 +83,7 @@ const Navbar = () => {
           text="Contact Us"
         />
 
-        <BurgerMenu open={open} handleMenu={handleMenu} />
+        <BurgerMenu handleMenu={handleMenu} />
       </nav>
     </header>
   );

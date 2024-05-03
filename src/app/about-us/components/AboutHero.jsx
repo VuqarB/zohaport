@@ -152,9 +152,8 @@ const AboutHero = () => {
 
           <div className="w-full max-w-[160px] h-[1px] bg-[#e54530]" />
         </motion.div>
-      </Section>
-
       <AboutVideo openVideo={openVideo} handleVideo={handleVideo} />
+      </Section>
     </>
   );
 };
