@@ -70,13 +70,9 @@ export const getBlogDetails = async (blogId) => {
   try {
     await connectToDb();
 
-    // Find the blog by ID and populate the details field
     const blog = await Blogs.findById(blogId);
-    // Extract the details ID from the populated blog
     const detailsId = blog.details;
-    // Find the blog details by ID
     const blogDetails = await BlogDetails.findById(detailsId);
-
     return blogDetails;
   } catch (err) {
     console.log(err);
@@ -190,7 +186,9 @@ export const getMainServiceShipping = async (serviceId) => {
     const service = await MainServices.findById(serviceId);
     const detailsId = service.details;
 
-    const mainServiceShippings = await MainServiceShipping.find({ service: detailsId });
+    const mainServiceShippings = await MainServiceShipping.find({
+      service: detailsId,
+    });
     return mainServiceShippings;
   } catch (err) {
     console.log(err);

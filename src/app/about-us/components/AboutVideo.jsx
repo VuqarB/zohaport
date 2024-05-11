@@ -10,7 +10,7 @@ const AboutVideo = ({ openVideo, handleVideo }) => {
       } fixed inset-0 z-[100] about-video-bg transition-all duration-200 ease-linear w-full h-full`}
       onClick={() => handleVideo(false)}
     >
-      <div className="flex flex-center h-full w-full px-8">
+      <div className="flex flex-center h-full w-full px-2 xs:px-8">
         <iframe
           className="w-full cLg:w-[940px] h-[280px] xs:h-[528px] object-cover"
           src="https://www.youtube.com/embed/XiA6cGnSPoM?si=f6eNEgTOZ8LpPcQ2"

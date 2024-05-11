@@ -1,5 +1,5 @@
 import Section from "./ui/Section";
-import SectionTitle from "./SectionTitle";
+import SectionTitle from "./ui/SectionTitle";
 import { getServices } from "@/lib/data";
 import ServiceSectionBody from "./ui/ServiceSectionBody";
 

@@ -1,4 +1,4 @@
-import SectionTitle from "./SectionTitle";
+import SectionTitle from "./ui/SectionTitle";
 import Section from "./ui/Section";
 import Testimonal from "./ui/Testimonal";
 import { getTestimonals } from "@/lib/data";

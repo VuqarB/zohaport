@@ -1,6 +1,6 @@
 "use client";
 
-import SectionTitle from "./SectionTitle";
+import SectionTitle from "./ui/SectionTitle";
 import Button from "./ui/Button";
 import Section from "./ui/Section";
 import Image from "next/image";

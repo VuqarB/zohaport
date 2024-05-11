@@ -1,4 +1,4 @@
-import SectionTitle from "@/components/SectionTitle";
+import SectionTitle from "@/components/ui/SectionTitle";
 import Section from "@/components/ui/Section";
 import Image from "next/image";
 import Accordion from "@/components/ui/Accordion";

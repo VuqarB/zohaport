@@ -1,6 +1,6 @@
 "use client";
 
-import SectionTitle from "@/components/SectionTitle";
+import SectionTitle from "@/components/ui/SectionTitle";
 import Button from "@/components/ui/Button";
 import Section from "@/components/ui/Section";
 import { blogDetailsList } from "@/constants";

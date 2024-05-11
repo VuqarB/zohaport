@@ -50,7 +50,6 @@ const BlogCard = ({ data }) => {
         color
         transparent
         icon
-        left
         padding="p-0"
       />
     </motion.div>

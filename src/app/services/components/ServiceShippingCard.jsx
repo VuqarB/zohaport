@@ -33,8 +33,8 @@ const ServiceShippingCard = ({ data, index }) => {
         icon
         transparent
         color
-        className="hover:text-[#e54530]"
-        padding
+        className="hover:text-[#e54530] p-0"
+        padding="p-0"
       />
     </motion.div>
   );

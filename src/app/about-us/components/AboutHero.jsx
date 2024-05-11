@@ -1,6 +1,6 @@
 "use client";
 
-import SectionTitle from "@/components/SectionTitle";
+import SectionTitle from "@/components/ui/SectionTitle";
 import Button from "@/components/ui/Button";
 import Section from "@/components/ui/Section";
 import Image from "next/image";
@@ -13,14 +13,12 @@ import CountUp from "react-countup";
 const AboutHero = () => {
   const [openVideo, setOpenVideo] = useState(false);
 
-  const handleVideo = (bool) => {
-    setOpenVideo(bool);
-  };
+  const handleVideo = (bool) => setOpenVideo(bool);
 
   return (
     <>
       <Section
-        className="max-container relative"
+        className="max-container"
         padding="pt-[100px] xs:pt-[135px] md:pt-[159px] cLg:pt-[180px] pb-[20px] xs:pb-[30px] md:pb-[60px] cLg:pb-[80px]"
       >
         <SectionTitle
@@ -152,7 +150,7 @@ const AboutHero = () => {
 
           <div className="w-full max-w-[160px] h-[1px] bg-[#e54530]" />
         </motion.div>
-      <AboutVideo openVideo={openVideo} handleVideo={handleVideo} />
+        <AboutVideo openVideo={openVideo} handleVideo={handleVideo} />
       </Section>
     </>
   );

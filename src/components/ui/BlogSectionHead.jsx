@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "./Button";
-import SectionTitle from "../SectionTitle";
+import SectionTitle from "./SectionTitle";
 import { motion } from "framer-motion";
 import { fadeInAnimationVariants } from "@/lib/motion";
 

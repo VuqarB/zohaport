@@ -1,4 +1,4 @@
-import SectionTitle from "@/components/SectionTitle";
+import SectionTitle from "@/components/ui/SectionTitle";
 import Section from "@/components/ui/Section";
 import { getMainServiceShipping } from "@/lib/data";
 import ServiceShippingCard from "./ServiceShippingCard";
